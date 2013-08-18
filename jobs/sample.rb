@@ -14,5 +14,5 @@ SCHEDULER.every '30s' do
     current_karma = data.first["properties"]["mag"]
     current_place = data.first["properties"]["place"]
 
-  send_event('karma', { current: max_karma, last: last_karma, place: max_place })
+  send_event('karma', { current: current_karma, last: last_karma, place: current_place })
 end
