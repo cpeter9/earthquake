@@ -7,3 +7,7 @@ gem 'sinatra'
 gem 'pry-debugger'
 ## Remove this if you don't need a twitter widget.
 gem 'twitter'
+
+group :test do
+  gem 'rspec'
+end

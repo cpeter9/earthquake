@@ -29,9 +29,16 @@ class Dashing.Earthquake extends Dashing.Widget
     )
 
     @earthquake.series[0].data = @get('points') if @get('points')
-
-    x_axis = new Rickshaw.Graph.Axis.Time(graph: @earthquake)
+    
+    format = (n) -> 
+      map = {
+        n: getTime(n).toString() 
+        }
+    
+    x_axis = new Rickshaw.Graph.Axis.Time(graph: @earthquake, tickFormat: format)
+    
     y_axis = new Rickshaw.Graph.Axis.Y(graph: @earthquake, tickFormat: Rickshaw.Fixtures.Number.formatKMBT)
+    
     @earthquake.render()
 
   onData: (data) ->
